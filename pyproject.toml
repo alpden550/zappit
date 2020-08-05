@@ -8,6 +8,7 @@ authors = ["alpden550 <alpden550@gmail.com>"]
 python = "^3.8"
 django = "^3.1"
 python-dotenv = "^0.14.0"
+djangorestframework = "^3.11.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
