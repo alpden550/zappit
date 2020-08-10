@@ -1,7 +1,8 @@
-from rest_framework import generics
+from rest_framework import generics, mixins, status
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import (IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
+from rest_framework.response import Response
 
 from posts.models import Post, Vote
 from posts.serializers import PostSerializer, VoteSerialiazer
@@ -16,7 +17,7 @@ class PostListView(generics.ListCreateAPIView):
         serializer.save(user=self.request.user)
 
 
-class VoteCreateView(generics.CreateAPIView):
+class VoteCreateView(generics.CreateAPIView, mixins.DestroyModelMixin):
     serializer_class = VoteSerialiazer
     permission_classes = (IsAuthenticated, )
 
@@ -30,3 +31,10 @@ class VoteCreateView(generics.CreateAPIView):
             raise ValidationError('You have already voted for this post:)')
         post = Post.objects.get(pk=self.kwargs['pk'])
         serializer.save(voter=self.request.user, post=post)
+
+    def delete(self, request, *args, **kwargs):
+        if not self.get_queryset().exists():
+            raise ValidationError('You never voted for this post.')
+
+        self.get_queryset().delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
