@@ -72,6 +72,14 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 category = "main"
+description = "A jazzy skin for the Django Admin-Interface."
+name = "django-grappelli"
+optional = false
+python-versions = "*"
+version = "2.14.2"
+
+[[package]]
+category = "main"
 description = "Web APIs for Django, made easy."
 name = "djangorestframework"
 optional = false
@@ -247,7 +255,7 @@ python-versions = "*"
 version = "0.2.5"
 
 [metadata]
-content-hash = "2bfd4bda18f4bdc8cb276300180ed635d07b536ca2dc216cb2542588e85b2402"
+content-hash = "c197f0be7217c14dedb1e4204b1c055775a08974fb0f93c38e80a23944119536"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -273,6 +281,9 @@ colorama = [
 django = [
     {file = "Django-3.1-py3-none-any.whl", hash = "sha256:1a63f5bb6ff4d7c42f62a519edc2adbb37f9b78068a5a862beff858b68e3dc8b"},
     {file = "Django-3.1.tar.gz", hash = "sha256:2d390268a13c655c97e0e2ede9d117007996db692c1bb93eabebd4fb7ea7012b"},
+]
+django-grappelli = [
+    {file = "django-grappelli-2.14.2.tar.gz", hash = "sha256:206d34525007e996dc989f1a0deef653b1fae5e0972a1fb24a59a3ad7e67141a"},
 ]
 djangorestframework = [
     {file = "djangorestframework-3.11.1-py3-none-any.whl", hash = "sha256:8b1ac62c581dbc5799b03e535854b92fc4053ecfe74bad3f9c05782063d4196b"},
