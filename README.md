@@ -1,6 +1,6 @@
 # API for the Zappit app
 
-Simple API for sevice like reddit.
+Simple API for service like Reddit.
 
 ## How to install
 
